@@ -1,101 +1,105 @@
-import Image from "next/image";
+// app/page.tsx
+import { Button } from "@/components/ui/button"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Check as CheckIcon } from "lucide-react"
 
-export default function Home() {
+
+export default function BlackFridayPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-20 text-center">
+        <Badge className="mb-4 bg-red-600 text-white">BLACK FRIDAY DEAL</Badge>
+        <h1 className="text-5xl font-bold mb-6">
+          Master Trading at <span className="text-red-600">50% OFF</span>
+        </h1>
+        <p className="text-xl text-gray-400 mb-8">
+          Limited time offer ends in 24 hours. Transform your trading journey today!
+        </p>
+        <Button size="lg" className="bg-red-600 hover:bg-red-700">
+          Claim Your Discount
+        </Button>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Pricing Section */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold text-center mb-12">Choose Your Package</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* E-book Package */}
+          <Card className="bg-gray-900 border-gray-800">
+            <CardHeader>
+              <CardTitle className="text-2xl">Trading E-book</CardTitle>
+              <CardDescription>Complete written guide to trading</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-baseline justify-center mb-4">
+                <span className="text-gray-400 line-through text-lg">$199</span>
+                <span className="text-4xl font-bold ml-2">$99</span>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <CheckIcon className="mr-2" /> 300+ pages of trading strategies
+                </li>
+                <li className="flex items-center">
+                  <CheckIcon className="mr-2" /> Technical analysis guide
+                </li>
+                <li className="flex items-center">
+                  <CheckIcon className="mr-2" /> Risk management templates
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-red-600 hover:bg-red-700">
+                Buy E-book Now
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Video Course Package */}
+          <Card className="bg-gray-900 border-gray-800 relative overflow-hidden">
+            <div className="absolute top-4 right-4">
+              <Badge className="bg-yellow-500">BEST VALUE</Badge>
+            </div>
+            <CardHeader>
+              <CardTitle className="text-2xl">Complete Video Course</CardTitle>
+              <CardDescription>Comprehensive video training</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-baseline justify-center mb-4">
+                <span className="text-gray-400 line-through text-lg">$499</span>
+                <span className="text-4xl font-bold ml-2">$249</span>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <CheckIcon className="mr-2" /> 50+ hours of video content
+                </li>
+                <li className="flex items-center">
+                  <CheckIcon className="mr-2" /> Live trading demonstrations
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-red-600 hover:bg-red-700">
+                Buy E-book Now
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="container mx-auto px-4 py-12 border-t border-gray-800">
+        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+          <div className="mb-4 md:mb-0">
+            © 2024 Trading Academy. All rights reserved.
+          </div>
+          <div className="flex space-x-6">
+            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white">Terms of Service</a>
+            <a href="/contact" className="hover:text-white">Contact</a>
+          </div>
+        </div>
       </footer>
     </div>
-  );
-}
+)};
