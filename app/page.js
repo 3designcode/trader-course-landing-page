@@ -157,7 +157,7 @@ export default function LandingPage() {
       {/* Pricing Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Pricing</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Course Packages</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="bg-slate-700/50 text-slate-200 border-slate-600">
               <CardHeader>
